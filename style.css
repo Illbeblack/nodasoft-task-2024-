@@ -1,0 +1,160 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --wrapper-color: #c0dbd9;
+  --main-blue-color: #7faff6;
+  --grid-bg-color: #b3f95a;
+  --grid-item-color: #8ad191;
+  --flex-bg-color: #88b5bf;
+  --flex-item-color: #0d89b0;
+  --header-link-bg-color: #a5c7f9;
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white-color);
+  background-color: var(--white-color);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 15px;
+  background-color: var(--wrapper-color);
+}
+
+.header {
+  margin-bottom: 15px;
+  padding: 30.5px 30px;
+  background-color: var(--main-blue-color);
+}
+
+.header__link {
+  color: var(--white-color);
+  background-color: var(--header-link-bg-color);
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template: repeat(2, 198px) / 390px 590px 160px;
+  grid-auto-rows: 198px;
+  gap: 15px;
+  background-color: var(--grid-bg-color);
+  margin-bottom: 15px;
+  counter-reset: grid;
+}
+
+.grid__item {
+  background-color: var(--grid-item-color);
+}
+
+.grid__item::before {
+  content: counter(grid);
+  counter-increment: grid;
+  font-size: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.grid__item:nth-child(4) {
+  grid-column: 1/3;
+}
+
+.flex {
+  display: flex;
+  background-color: var(--flex-bg-color);
+  column-gap: 30px;
+  margin-bottom: 100px;
+  padding: 30px;
+}
+
+.flex__item {
+  width: 255px;
+  aspect-ratio: 1.28;
+  background-color: var(--flex-item-color);
+}
+
+.footer {
+  background-color: var(--main-blue-color);
+  min-height: 100px;
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.2s ease;
+}
+
+.overlay:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay__close {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+.popup {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup__body {
+  font-size: 53px;
+  color: var(--black-color);
+  width: 400px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-color);
+  position: relative;
+}
+
+.popup__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: var(--main-blue-color);
+  color: var(--white-color);
+  padding: 8px 15px;
+  border-radius: 5px;
+}
