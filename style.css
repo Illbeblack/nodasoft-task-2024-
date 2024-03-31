@@ -95,3 +95,8 @@ body {
   aspect-ratio: 1.28;
   background-color: var(--flex-item-color);
 }
+
+.footer {
+  background-color: var(--main-blue-color);
+  min-height: 100px;
+}
