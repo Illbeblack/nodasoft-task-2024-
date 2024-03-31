@@ -100,3 +100,61 @@ body {
   background-color: var(--main-blue-color);
   min-height: 100px;
 }
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.2s ease;
+}
+
+.overlay:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay__close {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+.popup {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup__body {
+  font-size: 53px;
+  color: var(--black-color);
+  width: 400px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-color);
+  position: relative;
+}
+
+.popup__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: var(--main-blue-color);
+  color: var(--white-color);
+  padding: 8px 15px;
+  border-radius: 5px;
+}
